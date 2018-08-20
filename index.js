@@ -10,20 +10,55 @@ function setCart(c) {
 }
 
 function addToCart(item) {
- // write your code here
+  let price = (Math.floor(Math.random() * 100) +1);
+  var itemObject = {};
+  itemObject["itemName"] = item
+  itemObject["itemPrice"] = price
+  cart.push(itemObject)
+  return (`${item} has been added to your cart.`)
 }
 
-function viewCart() {
-  // write your code here
+function viewCart () {
+  if (cart.length === 0) {
+    return "Your shopping cart is empty."
+  }
+  var newarray = []
+    for (var i = 0; i < cart.length; i++) {
+      var keys = Object.keys(cart[i])[0] 
+      var values = Object.keys(cart[i])[1]
+      newarray.push(cart[i][keys] + " at $" + cart[i][values])
+    }
+    var mystring = "In your cart, you have "
+      if (newarray.length === 1) {
+        mystring += newarray + ".";
+      } else if (newarray.length === 2 ) {
+        mystring += (newarray[0] + ", and " + newarray[1] + ".")
+      } else if (newarray.length > 2) {
+        var lastelement = newarray.pop()
+        var other_item = newarray.join(", ")
+        mystring += (other_item + ", and " + lastelement + ".")
+      }
+      return mystring
 }
 
 function total() {
   // write your code here
+  var cartTotal = 0
+  for (let i = 0; i < cart.length; i++) {
+  cartTotal += cart[i][Object.keys(cart[i])[1]]
+  }
+  return cartTotal
 }
 
 function removeFromCart(item) {
   // write your code here
+   var i = cart.indexOf("item");
+    if (i != -1) {
+	array.splice(i, 1)
+  }
+  return cart
 }
+
 
 function placeOrder(cardNumber) {
   // write your code here
