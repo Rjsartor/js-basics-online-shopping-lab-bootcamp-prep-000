@@ -52,7 +52,6 @@ function total() {
 
 function removeFromCart(item) {
   // write your code here
-function removeFromCart(item) {
   var itemInCart = false
   for(var i = 0; i < cart.length; i++){
     if (cart[i].hasOwnProperty(item)) {
