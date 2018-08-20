@@ -53,13 +53,14 @@ function total() {
 function removeFromCart(item) {
   // write your code here
   var itemInCart = false
-    if (cart.itemName === item) {
+  for(var i = 0; i < cart.length; i++){
+    if (cart[i].hasOwnProperty(item)) {
       itemInCart = true;
-      let z = cart.indexOf(item)
-     cart.splice(z, 1);
+      cart.splice(i, 1);
     }
+  }
   if (!itemInCart) {
-    return("That item is not in your cart.");
+    console.log("That item is not in your cart.");
   }
   return cart
 }
