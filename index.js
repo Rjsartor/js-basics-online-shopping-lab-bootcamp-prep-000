@@ -57,7 +57,7 @@ function removeFromCart(item) {
     if (cart.itemName === item) {
       itemInCart = true;
       let z = cart.indexOf(item)
-     cart.splice(itemName, 1);
+     cart.splice(z, 1);
     }
   }
   if (!itemInCart) {
