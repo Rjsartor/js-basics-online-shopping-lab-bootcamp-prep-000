@@ -53,8 +53,7 @@ function total() {
 function removeFromCart(item) {
   // write your code here
   var itemInCart = false
-  if (var i = 0; i < cart.length; i++){
-    if (cart[i].indexOf("item") === true) {
+    if cart.indexOf("item") {
       itemInCart = true;
       cart.splice(i, 1);
     }
